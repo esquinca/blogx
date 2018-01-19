@@ -110,8 +110,10 @@
 					// to explicitly view the full site. This is validated
 					// by checking if a "noredirect" cookie exists
 					if ( document.cookie.indexOf(NO_REDIRECT) === -1 ) {
-
-						document.location = fallbackLink;
+						var win = window.open(fallbackLink, '_blank');
+						win.focus();
+						//window.open(fallbackLink);
+						//document.location = fallbackLink;
 						//window.location.replace(fallbackLink);
 					}
 				}
